@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: frscout
-  password: <%= ENV['FRSCOUT_DATABASE_PASSWORD'] %>
+  password: Uh6nP_Kj!l8H
   host: den1.mysql6.gear.host
 
 development:
@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: FRScout_production
-  username: FRScout
-  password: <%= ENV['FRSCOUT_DATABASE_PASSWORD'] %>
+  database: FRScout
