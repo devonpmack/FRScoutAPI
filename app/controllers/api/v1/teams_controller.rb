@@ -19,11 +19,21 @@ module Api
       def create
         team = Team.new(team_params)
 
-        if team.save
-          render json: {status: 'SUCCESS', message: 'Saved team', data: team}, status: :ok
+        if Team.find_by(number: team_params[:number]).nil?
+          if team.save
+            render json: {status: 'SUCCESS', message: 'Saved team', data: team}, status: :ok
+          else
+            render json: {status: 'ERROR', message: 'Team not saved',
+                          data: team.errors}, status: :unprocessable_entity
+          end
         else
-          render json: {status: 'ERROR', message: 'Team not saved',
-                        data: team.errors}, status: :unprocessable_entity
+          team = Team.find_by(number: team_params[:number])
+          if team.update_attributes(team_params)
+            render json: {status: 'SUCCESS', message: 'Updated team', data: team}, status: :ok
+          else
+            render json: {status: 'ERROR', message: 'Team not updated',
+                          data: team.errors}, status: :unprocessable_entity
+          end
         end
       end
 
@@ -37,12 +47,12 @@ module Api
 
       end
 
-      def update
+      def updates
         team = Team.find_by(number: params[:id])
         if team.nil?
           raise ActionController::RoutingError.new('Not Found')
         end
-        if team.update_attributes(team_params)
+        if team.update_attributes(team_params) && Team.find_by(number: team_params[:number]).nil?
           render json: {status: 'SUCCESS', message: 'Updated team', data: team}, status: :ok
         else
           render json: {status: 'ERROR', message: 'Team not updated',
