@@ -1,6 +1,7 @@
 module Api
   module V1
     class TeamsController < ApplicationController
+
       def index
         teams = Team.order('created_at DESC')
 
@@ -8,12 +9,15 @@ module Api
       end
 
       def show
-        team = Team.find(params[:id])
+        team = Team.find_by(number: params[:id])
+        if team.nil?
+          raise ActionController::RoutingError.new('Not Found')
+        end
         render json: {status: 'SUCCESS', message: 'Loaded team', data: team}, status: :ok
       end
 
       def create
-        team = Team.new(article_params)
+        team = Team.new(team_params)
 
         if team.save
           render json: {status: 'SUCCESS', message: 'Saved team', data: team}, status: :ok
@@ -24,15 +28,21 @@ module Api
       end
 
       def destroy
-        team = Team.find(params[:id])
+        team = Team.find_by(number: params[:id])
+        if team.nil?
+          raise ActionController::RoutingError.new('Not Found')
+        end
         team.destroy
         render json: {status: 'SUCCESS', message: 'Deleted team', data: team}, status: :ok
 
       end
 
       def update
-        team = Team.find(params[:id])
-        if team.update_attributes(article_params)
+        team = Team.find_by(number: params[:id])
+        if team.nil?
+          raise ActionController::RoutingError.new('Not Found')
+        end
+        if team.update_attributes(team_params)
           render json: {status: 'SUCCESS', message: 'Updated team', data: team}, status: :ok
         else
           render json: {status: 'ERROR', message: 'Team not updated',
@@ -40,8 +50,8 @@ module Api
         end
       end
 
-      private def article_params
-        params.permit(:name, :notes)
+      private def team_params
+        params.permit(:name, :number, :notes, :objective_score, :consistency, :driver_skill, :issues)
       end
     end
   end

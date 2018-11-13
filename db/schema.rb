@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_11_12_014203) do
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "number"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
