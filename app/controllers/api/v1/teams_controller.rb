@@ -60,6 +60,7 @@ module Api
         end
       end
 
+
       private def team_params
         params.permit(:name, :number, :notes, :objective_score, :consistency, :driver_skill, :issues)
       end
