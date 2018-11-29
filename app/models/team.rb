@@ -7,5 +7,6 @@ class Team < ApplicationRecord
   attribute :objective_score, :integer
   attribute :consistency, :integer
   attribute :driver_skill, :integer
+  attribute :autonomous, :integer
   attribute :issues, :string
 end

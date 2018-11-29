@@ -8,6 +8,7 @@ class CreateTeams < ActiveRecord::Migration[5.2]
       t.integer :consistency
       t.integer :driver_skill
       t.text :issues
+      t.integer :autonomous
 
 
       t.timestamps
