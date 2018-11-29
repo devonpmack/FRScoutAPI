@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_014203) do
     t.integer "number"
     t.string "name"
     t.text "notes"
+    t.integer "autonomous"
     t.integer "objective_score"
     t.integer "consistency"
     t.integer "driver_skill"
