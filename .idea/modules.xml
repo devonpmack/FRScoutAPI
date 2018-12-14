@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FRScout.iml" filepath="$PROJECT_DIR$/.idea/FRScout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FRScoutAPI.iml" filepath="$PROJECT_DIR$/.idea/FRScoutAPI.iml" />
     </modules>
   </component>
 </project>
