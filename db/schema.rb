@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_014203) do
+ActiveRecord::Schema.define(version: 2018_12_14_051504) do
+
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number"
+    t.integer "blue_alliance_1"
+    t.integer "blue_alliance_2"
+    t.integer "blue_alliance_3"
+    t.integer "red_alliance_1"
+    t.integer "red_alliance_2"
+    t.integer "red_alliance_3"
+    t.integer "red_score"
+    t.integer "blue_score"
+    t.integer "red_ranking_points"
+    t.integer "blue_ranking_points"
+    t.integer "winning_alliance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number"
