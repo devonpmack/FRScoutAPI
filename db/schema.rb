@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_023317) do
+ActiveRecord::Schema.define(version: 2019_03_01_031748) do
 
   create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_023317) do
     t.integer "sandstorm_mode"
     t.string "sandstorm_notes"
     t.integer "defence"
+    t.string "wheelType"
   end
 
 end
