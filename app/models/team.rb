@@ -14,7 +14,7 @@ class Team < ApplicationRecord
   attribute :cargo_max, :integer
   attribute :cargo_pickup, :integer
   attribute :move_hatch, :boolean
-  attribute :hatch_max :integer
+  attribute :hatch_max, :integer
   attribute :hatch_pickup, :integer
   attribute :climb_level, :integer
   attribute :climb_notes, :string
