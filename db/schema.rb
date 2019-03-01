@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_051504) do
+ActiveRecord::Schema.define(version: 2019_03_01_023317) do
 
   create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2018_12_14_051504) do
     t.integer "blue_score"
     t.integer "red_ranking_points"
     t.integer "blue_ranking_points"
-    t.integer "winning_alliance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +39,18 @@ ActiveRecord::Schema.define(version: 2018_12_14_051504) do
     t.text "issues"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "move_cargo"
+    t.integer "cargo_max"
+    t.integer "cargo_pickup"
+    t.boolean "move_hatch"
+    t.integer "hatch_max"
+    t.integer "hatch_pickup"
+    t.string "wheel_type"
+    t.integer "climb_level"
+    t.string "climb_notes"
+    t.integer "sandstorm_mode"
+    t.string "sandstorm_notes"
+    t.integer "defence"
   end
 
 end
