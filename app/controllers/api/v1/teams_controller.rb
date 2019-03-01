@@ -61,7 +61,7 @@ module Api
       end
 
       private def team_params
-        params.permit(:name, :number, :notes, :objective_score, :consistency, :driver_skill, :autonomous, :issues, :defence, :move_cargo, :cargo_max, :cargo_pickup, :move_hatch, :hatch_max, :hatch_pickup, :climb_level, :climb_notes, :sandstorm_mode, :sandstorm_notes)
+        params.permit(:name, :number, :notes, :objective_score, :consistency, :driver_skill, :autonomous, :issues, :defence, :move_cargo, :cargo_max, :cargo_pickup, :move_hatch, :hatch_max, :hatch_pickup, :climb_level, :climb_notes, :sandstorm_mode, :sandstorm_notes, :wheel_type)
       end
     end
   end

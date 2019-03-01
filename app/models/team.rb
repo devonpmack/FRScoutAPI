@@ -20,4 +20,5 @@ class Team < ApplicationRecord
   attribute :climb_notes, :string
   attribute :sandstorm_mode, :integer
   attribute :sandstorm_notes, :string
+  attribute :wheel_type, :string
 end
